@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PowerLifting Predictor</title>
+    <style>
+        body {
+            background-image: url('https://as2.ftcdn.net/v2/jpg/01/13/65/71/1000_F_113657105_Bktota7BzQ5cEUcZb4l0D4qSD2Sw08P2.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        .prediction-box {
+            background-color: rgba(255, 255, 255, 0.7);
+            border: 2px solid #000;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin: 0 auto;
+            max-width: 400px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body text="black">
+<div class="Login">
+    <center><h1>PowerLifting Predictor</h1></center>
+    <center>
+        <form action="{{ url_for('predict') }}" method="post">
+            <h2>Please enter the following details</h2>
+            <!-- Your form fields here -->
+            <label>Player Id:</label><br>
+            <input type="number" min="0" name="playerId" placeholder="Player Id"><br>
+<br>
+            <label>Sex:</label><br>
+       <input type="number" min="0" max="1" name="Sex" placeholder="Sex" required="required"/><br>
+            </select><br>
+
+            <label>Equipment:</label><br>
+            <input type="number" min="0" max="3" name="Equipment" placeholder="Equipment" required="required"><br>
+
+            <label>Age:</label><br>
+            <input type="number" min="15" max="60" name="Age" placeholder="Age" required="required"><br>
+
+            <label>Body Weight:</label><br>
+            <input type="number" name="BodyweightKg" placeholder="BodyWeight" required="required"><br>
+
+            <label>Squat:</label><br>
+            <input type="number" name="BestSquatKg" placeholder="BestSquat" required="required"><br>
+
+            <label>Best Bench:</label><br>
+            <input type="number" name="BestBenchKg" placeholder="BestBench" required="required"><br><br>
+
+            <button type="submit" class="btn btn-primary btn-block btn-large" style="height:30px;width:200px">Predict</button>
+        
+        </form>
+    </center>
+
+    <br>
+    <div class="prediction-box">
+        <h2 style="color:green">{{ prediction_text }}</h2>
+    </div>
+    <br>
+
+    <!-- Your images here -->
+    <img src="data:image/png;base64,{{url_3}}" alt="Submit Form" height="180" width="233" onerror="this.style.display='none'"/>
+    <img src="data:image/png;base64,{{url_1}}" alt="Submit Form" height="180" width="233" onerror="this.style.display='none'"/>
+    <img src="data:image/png;base64,{{url_4}}" alt="Submit Form" height="180" width="233" onerror="this.style.display='none'"/>
+    <br>
+    <br>
+    <img src="data:image/png;base64,{{url_2}}" alt="Submit Form" height="180" width="233" onerror="this.style.display='none'"/>
+
+
+</div>
+</body>
+</html>
+
